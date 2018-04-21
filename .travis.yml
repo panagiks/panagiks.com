@@ -7,8 +7,10 @@ before_script:
   - npm install
 script:
   - gulp
+  - bash ./out.sh
 deploy:
   provider: pages
+  local-dir: out
   skip-cleanup: true
   github-token: $GITHUB_TOKEN
   keep-history: true
