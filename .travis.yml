@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+  - "6.11.2"
+install:
+  - npm i -g npm@3.10.10
+  - npm install -g gulp-cli
+  - npm install
+script:
+  - gulp
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  keep-history: true
+  target-branch: gh-pages
+  on:
+    branch: master
